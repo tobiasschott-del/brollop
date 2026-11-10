@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agnes & Tobias – Vi gifter oss</title>
+<meta name="description" content="Agnes och Tobias gifter sig lördag 8 maj 2027 i Vårdnäs kyrka. Fest på Gamla Slottet, Bjärka-Säby. Här hittar ni all information.">
+<meta name="theme-color" content="#7f5455">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #7f5455;          /* dammig mauve */
+    --bg-alt: #6e4647;      /* något mörkare för varannan sektion */
+    --ink: #f6ece4;         /* gräddvit text */
+    --muted: #ecdcd4;       /* dämpad text */
+    --line: rgba(246, 236, 228, .35);
+    --script: "Pinyon Script", "Snell Roundhand", cursive;
+    --serif: "EB Garamond", Georgia, serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { margin: 0; font-weight: 400; }
+  a { color: var(--ink); }
+
+  .caps { text-transform: uppercase; letter-spacing: .22em; font-size: .95rem; }
+  .ital { font-style: italic; }
+
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(127, 84, 85, .94);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav ul {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: .2rem 1.75rem;
+    list-style: none; margin: 0; padding: .9rem 1rem;
+  }
+  nav a { text-decoration: none; text-transform: uppercase; letter-spacing: .2em; font-size: .8rem; }
+  nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    min-height: 92vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 3.5rem 1.5rem 4rem;
+  }
+  .hero .eyebrow { margin: 0 0 1.5rem; }
+  .monogram { width: 118px; height: auto; margin-bottom: 1rem; }
+  .monogram ellipse { fill: none; stroke: var(--ink); }
+  .monogram text { fill: var(--ink); font-family: var(--script); }
+
+  .hero .names {
+    font-family: var(--script);
+    font-size: clamp(3.4rem, 13vw, 6.5rem);
+    line-height: 1.05;
+    margin: .6rem 0 0;
+  }
+  .hero .och { font-size: .95rem; letter-spacing: .12em; margin: .1rem 0; }
+  .hero .gifter { margin: 2rem 0 1.6rem; }
+  .hero .date { margin: 0; }
+  .hero .time { margin: .15rem 0 0; }
+  .hero .place { margin: 0; }
+  .hero .town { margin: 0; max-width: 24rem; }
+
+  .countdown { display: flex; gap: 1.75rem; margin-top: 2.2rem; justify-content: center; }
+  .countdown div { min-width: 4rem; }
+  .countdown strong { display: block; font-size: 2.2rem; font-weight: 400; line-height: 1.2; }
+  .countdown small { letter-spacing: .2em; text-transform: uppercase; font-size: .7rem; }
+
+  .hairline { width: 3.5rem; height: 1px; background: var(--line); margin: 1.6rem auto; border: 0; }
+
+  .btn {
+    display: inline-block; margin-top: 1.5rem;
+    padding: .8rem 2.2rem; border: 1px solid var(--ink);
+    color: var(--ink); text-decoration: none; background: transparent; cursor: pointer;
+    text-transform: uppercase; letter-spacing: .22em; font-size: .85rem; font-family: var(--serif);
+    transition: background .2s, color .2s;
+  }
+  .btn:hover { background: var(--ink); color: var(--bg); }
+
+  /* ---------- Sektioner ---------- */
+  section { padding: 5rem 1.5rem; }
+  section:nth-of-type(even) { background: var(--bg-alt); }
+  .wrap { max-width: 44rem; margin: 0 auto; }
+  .wrap.wide { max-width: 58rem; }
+  section h2 {
+    font-family: var(--script);
+    font-size: clamp(3rem, 9vw, 4.2rem);
+    text-align: center; line-height: 1.1;
+  }
+  .subtitle { text-align: center; margin: .4rem 0 0; font-size: .85rem; }
+  .rule { width: 3.5rem; height: 1px; background: var(--line); margin: 1.2rem auto 2.5rem; }
+  .center { text-align: center; }
+
+  .timeline { list-style: none; margin: 0; padding: 0; }
+  .timeline li {
+    display: grid; grid-template-columns: 5rem 1fr; gap: 1.5rem;
+    padding: 1.1rem 0; border-bottom: 1px solid var(--line);
+  }
+  .timeline li:last-child { border-bottom: 0; }
+  .timeline time { font-size: 1.5rem; }
+  .timeline h3 { text-transform: uppercase; letter-spacing: .2em; font-size: 1rem; padding-top: .3rem; }
+  .timeline p { margin: .1rem 0 0; font-style: italic; color: var(--muted); }
+
+  .cards { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
+  .card { padding: 1.75rem; border: 1px solid var(--line); }
+  .card h3 { text-transform: uppercase; letter-spacing: .2em; font-size: .95rem; margin-bottom: .7rem; }
+  .card p { margin: 0 0 .7rem; color: var(--muted); }
+  .card p:last-child { margin-bottom: 0; }
+
+  details { border-bottom: 1px solid var(--line); padding: 1rem 0; }
+  summary { cursor: pointer; text-transform: uppercase; letter-spacing: .18em; font-size: .95rem; list-style: none; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; float: right; }
+  details[open] summary::after { content: "–"; }
+  details p { margin: .7rem 0 0; font-style: italic; color: var(--muted); }
+
+  .contacts { text-align: center; margin: 1.5rem 0 0; }
+  .contacts p { margin: .1rem 0; }
+
+  /* ---------- Formulär ---------- */
+  form { display: grid; gap: 1.25rem; margin-top: 2rem; }
+  label { display: grid; gap: .35rem; text-transform: uppercase; letter-spacing: .16em; font-size: .8rem; }
+  input, select, textarea {
+    font: inherit; font-size: 1.05rem; letter-spacing: 0; text-transform: none;
+    padding: .75rem .9rem; border: 1px solid var(--line); background: rgba(246, 236, 228, .96);
+    color: #3a2626; border-radius: 0; width: 100%;
+  }
+  input:focus, select:focus, textarea:focus { outline: 2px solid var(--ink); outline-offset: 2px; }
+  textarea { min-height: 6rem; resize: vertical; }
+  .row { display: grid; gap: 1.25rem; grid-template-columns: 1fr 1fr; }
+  @media (max-width: 36rem) {
+    .row { grid-template-columns: 1fr; }
+    .timeline li { grid-template-columns: 4.5rem 1fr; gap: 1rem; }
+  }
+  .radios { display: flex; gap: 1.5rem; flex-wrap: wrap; border: 0; padding: 0; margin: 0; }
+  .radios label, .check { display: flex; align-items: center; gap: .6rem; text-transform: none; letter-spacing: 0; font-size: 1.1rem; }
+  .radios input, .check input { width: auto; accent-color: #3a2626; }
+  .check { margin-top: 1.25rem; }
+  .hidden { display: none; }
+  .note { font-size: .95rem; font-style: italic; color: var(--muted); }
+  .thanks { text-align: center; padding: 2rem 0; font-family: var(--script); font-size: 2.6rem; }
+
+  footer { text-align: center; padding: 3.5rem 1rem 4rem; }
+  footer .names { font-family: var(--script); font-size: 2.6rem; line-height: 1.2; }
+  footer p { margin: .3rem 0 0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="#hem">Hem</a></li>
+    <li><a href="#var-historia">Vår historia</a></li>
+    <li><a href="#programmet">Programmet</a></li>
+    <li><a href="#praktiskt">Praktiskt</a></li>
+    <li><a href="#osa">O.S.A.</a></li>
+    <li><a href="#fragor">Frågor</a></li>
+  </ul>
+</nav>
+
+<header class="hero" id="hem">
+  <p class="eyebrow caps">Välkomna att fira kärleken</p>
+
+  <svg class="monogram" viewBox="0 0 120 150" role="img" aria-label="Monogram A och T">
+    <ellipse cx="60" cy="75" rx="54" ry="70" stroke-width="1.6"/>
+    <ellipse cx="60" cy="75" rx="49" ry="65" stroke-width=".8"/>
+    <text x="30" y="92" font-size="66">A</text>
+    <text x="58" y="104" font-size="58">T</text>
+  </svg>
+
+  <h1 class="names">Agnes</h1>
+  <div class="och ital">&amp;</div>
+  <h1 class="names">Tobias</h1>
+
+  <p class="gifter caps">Vi gifter oss</p>
+
+  <p class="date caps" id="datumtext">Lördag 8 maj 2027</p>
+  <p class="time ital">vigsel klockan 14.00</p>
+
+  <hr class="hairline">
+
+  <p class="place caps">Vårdnäs kyrka</p>
+  <p class="town ital">därefter middag &amp; fest på Gamla Slottet, Bjärka-Säby</p>
+
+  <div class="countdown" id="countdown" hidden>
+    <div><strong id="cd-d">0</strong><small>dagar</small></div>
+    <div><strong id="cd-h">0</strong><small>timmar</small></div>
+    <div><strong id="cd-m">0</strong><small>minuter</small></div>
+  </div>
+
+  <a class="btn" href="#osa">Svara på inbjudan</a>
+</header>
+
+<section id="var-historia">
+  <div class="wrap center">
+    <h2>Vår historia</h2>
+    <div class="rule"></div>
+    <!-- TODO: Skriv er egen historia här -->
+    <p>Här berättar vi hur vi träffades, vad som hände sedan och hur frieriet gick till. Skriv några stycken med er egen röst, gärna med en rolig detalj eller två.</p>
+    <p>Lägg gärna till en bild här, till exempel ett favoritfoto på er två.</p>
+  </div>
+</section>
+
+<section id="programmet">
+  <div class="wrap">
+    <h2>Programmet</h2>
+    <div class="rule"></div>
+    <!-- TODO: Lägg gärna till tider för mingel, middag och fest när ni vet dem -->
+    <ol class="timeline">
+      <li><time>14.00</time><div><h3>Vigsel</h3><p>Vårdnäs kyrka</p></div></li>
+      <li><time>Sedan</time><div><h3>Middag &amp; fest</h3><p>Gamla Slottet, Bjärka-Säby. Efter vigseln fortsätter vi firandet med middag och fest.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="praktiskt">
+  <div class="wrap wide">
+    <h2>Praktisk information</h2>
+    <p class="subtitle caps">Agnes &amp; Tobias · 8 maj 2027</p>
+    <div class="rule"></div>
+    <div class="cards">
+      <div class="card">
+        <h3>Transport &amp; parkering</h3>
+        <p>Vigseln äger rum i Vårdnäs kyrka och därefter fortsätter firandet på Gamla Slottet i Bjärka-Säby.</p>
+        <p>Från kyrkan till festlokalen åker man egen bil, ca 10 minuters bilfärd. Väl framme vid slottet är det skyltat för gästparkering.</p>
+      </div>
+      <div class="card">
+        <h3>Boende &amp; incheckning</h3>
+        <p>För er som önskar övernatta finns rum i Gamla Slottet och närliggande byggnad. Boendet kostar 550 kr per person och frukost ingår. Meddela brudparet i samband med anmälan, betalning sker via Swish.</p>
+        <p>Incheckning sker direkt när ni anlänt till Gamla Slottet.</p>
+      </div>
+      <div class="card">
+        <h3>Klädkod</h3>
+        <p>Kostym.</p>
+      </div>
+      <div class="card">
+        <h3>Tal &amp; överraskningar</h3>
+        <p>Vill ni hålla tal eller bidra med något festligt under middagen eller kvällen? Kontakta vår toastmaster/toastmadame:</p>
+        <p>Angelica Lindblad</p>
+      </div>
+      <div class="card">
+        <h3>Presenter</h3>
+        <p>Er närvaro är den finaste presenten vi kan önska oss. Present till bidrag av bröllopsresa eller en tur med rymdraket till månen mottages varmt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="osa">
+  <div class="wrap">
+    <h2>O.S.A.</h2>
+    <div class="rule"></div>
+    <p class="center">Svara senast <strong>20 mars</strong>. Meddela eventuella allergier och specialkost. Vi hoppas att få fira denna dag med er!</p>
+
+    <div class="contacts">
+      <p>Agnes <a href="tel:+46706394222">0706-394222</a></p>
+      <!-- TODO: Fyll i Tobias telefonnummer -->
+      <p>Tobias 070-[nummer]</p>
+    </div>
+
+    <!--
+      TODO: Formuläret skickar just nu inte svaren någonstans.
+      Enklaste sättet är Formspree (formspree.io) eller Netlify Forms:
+      byt ut action nedan mot er egen adress. Se README.md.
+    -->
+    <form id="osa-form" action="https://formspree.io/f/DITT_FORM_ID" method="POST">
+      <label>Namn
+        <input type="text" name="namn" required autocomplete="name">
+      </label>
+      <label>E-post
+        <input type="email" name="epost" required autocomplete="email">
+      </label>
+
+      <fieldset class="radios">
+        <label><input type="radio" name="kommer" value="Ja" required> Ja, jag kommer</label>
+        <label><input type="radio" name="kommer" value="Nej"> Nej, jag kan tyvärr inte</label>
+      </fieldset>
+
+      <div id="extra" class="hidden">
+        <div class="row">
+          <label>Antal personer
+            <select name="antal">
+              <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+            </select>
+          </label>
+          <label>Namn på övriga gäster
+            <input type="text" name="ovriga">
+          </label>
+        </div>
+        <label style="margin-top:1.25rem">Allergier och specialkost
+          <input type="text" name="allergier">
+        </label>
+        <label class="check">
+          <input type="checkbox" name="overnattning" value="Ja">
+          Jag vill övernatta på Gamla Slottet (550 kr per person, frukost ingår)
+        </label>
+      </div>
+
+      <label>Meddelande till brudparet (valfritt)
+        <textarea name="meddelande"></textarea>
+      </label>
+
+      <button class="btn" type="submit" style="justify-self:center">Skicka svar</button>
+      <p class="note center">Vi sparar bara uppgifterna för att planera bröllopet.</p>
+    </form>
+    <div id="tack" class="thanks hidden">Tack för ditt svar!</div>
+  </div>
+</section>
+
+<section id="fragor">
+  <div class="wrap">
+    <h2>Vanliga frågor</h2>
+    <div class="rule"></div>
+    <details>
+      <summary>Får barn följa med?</summary>
+      <p>Vi älskar barn, men denna dag firar vi i vuxet sällskap. Ammande spädbarn är självklart varmt välkomna.</p>
+    </details>
+    <details>
+      <summary>Vem kontaktar jag vid frågor?</summary>
+      <p>Hör av dig till Agnes på 0706-394222 eller till Tobias. För tal och överraskningar kontaktar du Angelica Lindblad.</p>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <div class="names">Agnes &amp; Tobias</div>
+  <p class="caps">8 maj 2027 · agnestobiasbrollop.se</p>
+</footer>
+
+<script>
+  const WEDDING_DATE = "2027-05-08T14:00:00+02:00";
+
+  if (WEDDING_DATE) {
+    const target = new Date(WEDDING_DATE);
+    const fmt = new Intl.DateTimeFormat("sv-SE", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+    document.getElementById("datumtext").textContent = fmt.format(target);
+    document.getElementById("countdown").hidden = false;
+    const tick = () => {
+      const diff = Math.max(0, target - new Date());
+      document.getElementById("cd-d").textContent = Math.floor(diff / 864e5);
+      document.getElementById("cd-h").textContent = Math.floor(diff % 864e5 / 36e5);
+      document.getElementById("cd-m").textContent = Math.floor(diff % 36e5 / 6e4);
+    };
+    tick(); setInterval(tick, 30000);
+  }
+
+  // Visa extrafält bara om man kommer
+  const extra = document.getElementById("extra");
+  document.querySelectorAll('input[name="kommer"]').forEach(r =>
+    r.addEventListener("change", () => extra.classList.toggle("hidden", r.value !== "Ja")));
+
+  // Skicka formuläret utan sidladdning
+  const form = document.getElementById("osa-form");
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    try {
+      const res = await fetch(form.action, {
+        method: "POST", body: new FormData(form), headers: { Accept: "application/json" }
+      });
+      if (!res.ok) throw new Error();
+      form.classList.add("hidden");
+      document.getElementById("tack").classList.remove("hidden");
+    } catch {
+      alert("Något gick fel. Försök igen eller kontakta oss direkt.");
+    }
+  });
+</script>
+</body>
+</html>
