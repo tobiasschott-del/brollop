@@ -56,9 +56,6 @@
     text-align: center; padding: 3.5rem 1.5rem 4rem;
   }
   .hero .eyebrow { margin: 0 0 1.5rem; }
-  .monogram { width: 118px; height: auto; margin-bottom: 1rem; }
-  .monogram ellipse { fill: none; stroke: var(--ink); }
-  .monogram text { fill: var(--ink); font-family: var(--script); }
 
   .hero .names {
     font-family: var(--script);
@@ -103,6 +100,11 @@
   .rule { width: 3.5rem; height: 1px; background: var(--line); margin: 1.2rem auto 2.5rem; }
   .center { text-align: center; }
 
+  .gallery { column-count: 2; column-gap: 1rem; }
+  .gallery figure { margin: 0 0 1rem; break-inside: avoid; }
+  .gallery img { display: block; width: 100%; height: auto; border: 1px solid var(--line); padding: .35rem; }
+  @media (min-width: 44rem) { .gallery { column-count: 3; } }
+
   .timeline { list-style: none; margin: 0; padding: 0; }
   .timeline li {
     display: grid; grid-template-columns: 5rem 1fr; gap: 1.5rem;
@@ -119,38 +121,14 @@
   .card p { margin: 0 0 .7rem; color: var(--muted); }
   .card p:last-child { margin-bottom: 0; }
 
-  details { border-bottom: 1px solid var(--line); padding: 1rem 0; }
-  summary { cursor: pointer; text-transform: uppercase; letter-spacing: .18em; font-size: .95rem; list-style: none; }
-  summary::-webkit-details-marker { display: none; }
-  summary::after { content: "+"; float: right; }
-  details[open] summary::after { content: "–"; }
-  details p { margin: .7rem 0 0; font-style: italic; color: var(--muted); }
 
-  .contacts { text-align: center; margin: 1.5rem 0 0; }
-  .contacts p { margin: .1rem 0; }
+  .contacts { text-align: center; margin: 2rem 0 0; }
+  .contacts p { margin: .35rem 0; font-size: 1.5rem; }
+  .contacts .who { text-transform: uppercase; letter-spacing: .2em; font-size: .85rem; margin-right: .75rem; }
 
-  /* ---------- Formulär ---------- */
-  form { display: grid; gap: 1.25rem; margin-top: 2rem; }
-  label { display: grid; gap: .35rem; text-transform: uppercase; letter-spacing: .16em; font-size: .8rem; }
-  input, select, textarea {
-    font: inherit; font-size: 1.05rem; letter-spacing: 0; text-transform: none;
-    padding: .75rem .9rem; border: 1px solid var(--line); background: rgba(246, 236, 228, .96);
-    color: #3a2626; border-radius: 0; width: 100%;
-  }
-  input:focus, select:focus, textarea:focus { outline: 2px solid var(--ink); outline-offset: 2px; }
-  textarea { min-height: 6rem; resize: vertical; }
-  .row { display: grid; gap: 1.25rem; grid-template-columns: 1fr 1fr; }
   @media (max-width: 36rem) {
-    .row { grid-template-columns: 1fr; }
     .timeline li { grid-template-columns: 4.5rem 1fr; gap: 1rem; }
   }
-  .radios { display: flex; gap: 1.5rem; flex-wrap: wrap; border: 0; padding: 0; margin: 0; }
-  .radios label, .check { display: flex; align-items: center; gap: .6rem; text-transform: none; letter-spacing: 0; font-size: 1.1rem; }
-  .radios input, .check input { width: auto; accent-color: #3a2626; }
-  .check { margin-top: 1.25rem; }
-  .hidden { display: none; }
-  .note { font-size: .95rem; font-style: italic; color: var(--muted); }
-  .thanks { text-align: center; padding: 2rem 0; font-family: var(--script); font-size: 2.6rem; }
 
   footer { text-align: center; padding: 3.5rem 1rem 4rem; }
   footer .names { font-family: var(--script); font-size: 2.6rem; line-height: 1.2; }
@@ -166,19 +144,11 @@
     <li><a href="#programmet">Programmet</a></li>
     <li><a href="#praktiskt">Praktiskt</a></li>
     <li><a href="#osa">O.S.A.</a></li>
-    <li><a href="#fragor">Frågor</a></li>
   </ul>
 </nav>
 
 <header class="hero" id="hem">
   <p class="eyebrow caps">Välkomna att fira kärleken</p>
-
-  <svg class="monogram" viewBox="0 0 120 150" role="img" aria-label="Monogram A och T">
-    <ellipse cx="60" cy="75" rx="54" ry="70" stroke-width="1.6"/>
-    <ellipse cx="60" cy="75" rx="49" ry="65" stroke-width=".8"/>
-    <text x="30" y="92" font-size="66">A</text>
-    <text x="58" y="104" font-size="58">T</text>
-  </svg>
 
   <h1 class="names">Agnes</h1>
   <div class="och ital">&amp;</div>
@@ -207,9 +177,28 @@
   <div class="wrap center">
     <h2>Vår historia</h2>
     <div class="rule"></div>
-    <!-- TODO: Skriv er egen historia här -->
-    <p>Här berättar vi hur vi träffades, vad som hände sedan och hur frieriet gick till. Skriv några stycken med er egen röst, gärna med en rolig detalj eller två.</p>
-    <p>Lägg gärna till en bild här, till exempel ett favoritfoto på er två.</p>
+  </div>
+  <div class="wrap wide">
+    <div class="gallery">
+      <figure><img src="images/01-glasogon.jpg" width="750" height="1000" loading="lazy" alt="Agnes skrattar och Tobias gör en min i solglasögon på en gata"></figure>
+      <figure><img src="images/09-vanner.jpg" width="1000" height="889" loading="lazy" alt="Tre skrattande vänner tillsammans, den i mitten gör ett fredstecken"></figure>
+      <figure><img src="images/02-paris.jpg" width="750" height="1000" loading="lazy" alt="Agnes och Tobias framför Eiffeltornet i Paris"></figure>
+      <figure><img src="images/10-tunnelbana.jpg" width="1000" height="890" loading="lazy" alt="Tobias och Agnes tätt ihop i en tunnelbana full med människor"></figure>
+      <figure><img src="images/03-svartvit.jpg" width="1000" height="1000" loading="lazy" alt="Agnes och Tobias kind mot kind, svartvit bild"></figure>
+      <figure><img src="images/11-moske.jpg" width="1000" height="997" loading="lazy" alt="Fyra personer tar en selfie framför en upplyst moské på natten"></figure>
+      <figure><img src="images/18-torn.jpg" width="1000" height="892" loading="lazy" alt="Fyra personer tar en selfie framför ett högt, upplyst torn på natten"></figure>
+      <figure><img src="images/04-picknick.jpg" width="752" height="1000" loading="lazy" alt="Agnes och Tobias med ett litet barn vid en picknickplats i skogen"></figure>
+      <figure><img src="images/12-flyttbil.jpg" width="1000" height="751" loading="lazy" alt="En vit skåpbil med öppna bakdörrar, fullastad med möbler och tavlor"></figure>
+      <figure><img src="images/13-bat.jpg" width="752" height="1000" loading="lazy" alt="Agnes och Tobias i solglasögon ombord på en båt i en hamn en solig dag"></figure>
+      <figure><img src="images/14-ballong.jpg" width="800" height="1000" loading="lazy" alt="Agnes och Tobias skrattar och vinkar framför en silverfärgad ballong"></figure>
+      <figure><img src="images/15-spegel.jpg" width="1000" height="891" loading="lazy" alt="Tobias i kostym och Agnes som målar läpparna, speglade i en hjärtformad spegel"></figure>
+      <figure><img src="images/17-ringar.jpg" width="1000" height="1000" loading="lazy" alt="Ihopflätade händer med en förlovningsring och en slät ring"></figure>
+      <figure><img src="images/16-bygge.jpg" width="750" height="1000" loading="lazy" alt="Agnes och Tobias i andningsmasker framför en cementblandare och en skottkärra"></figure>
+      <figure><img src="images/05-skidor.jpg" width="750" height="1000" loading="lazy" alt="Familjen på skidor i solnedgången"></figure>
+      <figure><img src="images/06-eldstad.jpg" width="750" height="1000" loading="lazy" alt="Marshmallows över en eldstad i snön"></figure>
+      <figure><img src="images/08-badtunna.jpg" width="750" height="1000" loading="lazy" alt="En man kopplar av i en badtunna framför ett upplyst växthus en mörk kväll"></figure>
+      <figure><img src="images/07-familj.jpg" width="750" height="1000" loading="lazy" alt="Agnes, Tobias och två barn på en kulle med utsikt över en liten sjö"></figure>
+    </div>
   </div>
 </section>
 
@@ -217,10 +206,13 @@
   <div class="wrap">
     <h2>Programmet</h2>
     <div class="rule"></div>
-    <!-- TODO: Lägg gärna till tider för mingel, middag och fest när ni vet dem -->
     <ol class="timeline">
       <li><time>14.00</time><div><h3>Vigsel</h3><p>Vårdnäs kyrka</p></div></li>
-      <li><time>Sedan</time><div><h3>Middag &amp; fest</h3><p>Gamla Slottet, Bjärka-Säby. Efter vigseln fortsätter vi firandet med middag och fest.</p></div></li>
+      <li><time>15.30</time><div><h3>Incheckning</h3><p>Rum i Gamla Slottet och flygeln, 15.30–16.00</p></div></li>
+      <li><time>16.00</time><div><h3>Brudskål &amp; tårta</h3><p>Gamla Slottet, Bjärka-Säby</p></div></li>
+      <li><time>17.30</time><div><h3>Middagssittning</h3></div></li>
+      <li><time>21.00</time><div><h3>Bröllopsfest</h3></div></li>
+      <li><time>00.00</time><div><h3>Vickning</h3></div></li>
     </ol>
   </div>
 </section>
@@ -238,12 +230,16 @@
       </div>
       <div class="card">
         <h3>Boende &amp; incheckning</h3>
-        <p>För er som önskar övernatta finns rum i Gamla Slottet och närliggande byggnad. Boendet kostar 550 kr per person och frukost ingår. Meddela brudparet i samband med anmälan, betalning sker via Swish.</p>
+        <p>För er som önskar övernatta finns rum i Gamla Slottet och närliggande byggnad. Boendet kostar 550 kr per person och frukost ingår. Meddela brudparet när ni svarar på inbjudan, betalning sker via Swish.</p>
         <p>Incheckning sker direkt när ni anlänt till Gamla Slottet.</p>
       </div>
       <div class="card">
         <h3>Klädkod</h3>
-        <p>Kostym.</p>
+        <p>Mörk kostym.</p>
+      </div>
+      <div class="card">
+        <h3>Barnfritt</h3>
+        <p>Vi älskar era små, men just den här dagen vill vi fira i vuxet sällskap och hoppas att ni passar på att njuta av en barnfri kväll. Ammande spädbarn är förstås varmt välkomna.</p>
       </div>
       <div class="card">
         <h3>Tal &amp; överraskningar</h3>
@@ -262,75 +258,12 @@
   <div class="wrap">
     <h2>O.S.A.</h2>
     <div class="rule"></div>
-    <p class="center">Svara senast <strong>20 mars</strong>. Meddela eventuella allergier och specialkost. Vi hoppas att få fira denna dag med er!</p>
+    <p class="center">Svara senast <strong>20 mars</strong> genom att ringa eller skicka sms till någon av oss. Meddela samtidigt om ni vill övernatta (550 kr per person, frukost ingår) och om ni har allergier eller special&shy;kost. Vi hoppas att få fira denna dag med er!</p>
 
     <div class="contacts">
-      <p>Agnes <a href="tel:+46706394222">0706-394222</a></p>
-      <!-- TODO: Fyll i Tobias telefonnummer -->
-      <p>Tobias 070-[nummer]</p>
+      <p><span class="who">Agnes</span> <a href="tel:+46706394222">0706-394222</a></p>
+      <p><span class="who">Tobias</span> <a href="tel:+46764701122">0764-701122</a></p>
     </div>
-
-    <!--
-      TODO: Formuläret skickar just nu inte svaren någonstans.
-      Enklaste sättet är Formspree (formspree.io) eller Netlify Forms:
-      byt ut action nedan mot er egen adress. Se README.md.
-    -->
-    <form id="osa-form" action="https://formspree.io/f/DITT_FORM_ID" method="POST">
-      <label>Namn
-        <input type="text" name="namn" required autocomplete="name">
-      </label>
-      <label>E-post
-        <input type="email" name="epost" required autocomplete="email">
-      </label>
-
-      <fieldset class="radios">
-        <label><input type="radio" name="kommer" value="Ja" required> Ja, jag kommer</label>
-        <label><input type="radio" name="kommer" value="Nej"> Nej, jag kan tyvärr inte</label>
-      </fieldset>
-
-      <div id="extra" class="hidden">
-        <div class="row">
-          <label>Antal personer
-            <select name="antal">
-              <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
-            </select>
-          </label>
-          <label>Namn på övriga gäster
-            <input type="text" name="ovriga">
-          </label>
-        </div>
-        <label style="margin-top:1.25rem">Allergier och specialkost
-          <input type="text" name="allergier">
-        </label>
-        <label class="check">
-          <input type="checkbox" name="overnattning" value="Ja">
-          Jag vill övernatta på Gamla Slottet (550 kr per person, frukost ingår)
-        </label>
-      </div>
-
-      <label>Meddelande till brudparet (valfritt)
-        <textarea name="meddelande"></textarea>
-      </label>
-
-      <button class="btn" type="submit" style="justify-self:center">Skicka svar</button>
-      <p class="note center">Vi sparar bara uppgifterna för att planera bröllopet.</p>
-    </form>
-    <div id="tack" class="thanks hidden">Tack för ditt svar!</div>
-  </div>
-</section>
-
-<section id="fragor">
-  <div class="wrap">
-    <h2>Vanliga frågor</h2>
-    <div class="rule"></div>
-    <details>
-      <summary>Får barn följa med?</summary>
-      <p>Vi älskar barn, men denna dag firar vi i vuxet sällskap. Ammande spädbarn är självklart varmt välkomna.</p>
-    </details>
-    <details>
-      <summary>Vem kontaktar jag vid frågor?</summary>
-      <p>Hör av dig till Agnes på 0706-394222 eller till Tobias. För tal och överraskningar kontaktar du Angelica Lindblad.</p>
-    </details>
   </div>
 </section>
 
@@ -356,26 +289,6 @@
     tick(); setInterval(tick, 30000);
   }
 
-  // Visa extrafält bara om man kommer
-  const extra = document.getElementById("extra");
-  document.querySelectorAll('input[name="kommer"]').forEach(r =>
-    r.addEventListener("change", () => extra.classList.toggle("hidden", r.value !== "Ja")));
-
-  // Skicka formuläret utan sidladdning
-  const form = document.getElementById("osa-form");
-  form.addEventListener("submit", async e => {
-    e.preventDefault();
-    try {
-      const res = await fetch(form.action, {
-        method: "POST", body: new FormData(form), headers: { Accept: "application/json" }
-      });
-      if (!res.ok) throw new Error();
-      form.classList.add("hidden");
-      document.getElementById("tack").classList.remove("hidden");
-    } catch {
-      alert("Något gick fel. Försök igen eller kontakta oss direkt.");
-    }
-  });
 </script>
 </body>
 </html>
